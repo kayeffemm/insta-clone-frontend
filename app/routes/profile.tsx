@@ -8,23 +8,44 @@ export default function ProfileLayout() {
 
   return (
     <div>
-      <div className='flex justify-center items-center border-b mb-4'>
+      {/* Sub-nav */}
+      <div className="flex justify-center items-center border-b mb-4">
         <NavLink
-          to='/profile/posts/grid'
-          className='flex-1 text-center p-4'
+          to="/profile/posts/grid"
+          className="flex-1 text-center p-4"
           style={({ isActive }) => (isActive ? activeLinkStyle : undefined)}
         >
           Posts
         </NavLink>
+
         <NavLink
-          to='/profile/reels/grid'
-          className='flex-1 text-center p-4'
+          to="/profile/reels/grid"
+          className="flex-1 text-center p-4"
           style={({ isActive }) => (isActive ? activeLinkStyle : undefined)}
         >
           Reels
         </NavLink>
+
+        <NavLink
+          to="/profile/tagged/grid"
+          className="flex-1 text-center p-4"
+          style={({ isActive }) => (isActive ? activeLinkStyle : undefined)}
+        >
+          Tagged
+        </NavLink>
+
+        <NavLink
+          to="/profile/highlights"
+          className="flex-1 text-center p-4"
+          style={({ isActive }) => (isActive ? activeLinkStyle : undefined)}
+        >
+          Highlights
+        </NavLink>
       </div>
-      <main>
+
+      {/* Page content */}
+      <main className="pb-20">
+        {/* pb-20 so content doesn't hide behind fixed BottomNav */}
         <Outlet />
       </main>
     </div>
